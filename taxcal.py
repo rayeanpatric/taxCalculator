@@ -4,7 +4,7 @@ import customtkinter as ctk
 from customtkinter import CTkScrollbar
 
 # Create a function to calculate tax
-def calculate_tax(standardDeduction_entry, totalIncome_entry, hra_entry, coOperation_entry, 
+def calculate_tax(standardDeduction_entry, totalIncome_entry, hra_entry, cooperation_entry, 
                   gpf_entry, childTution_entry, lic_entry, hlp_entry, section80CCC_entry, 
                   section80CCD_entry, pmRelief_entry, cmRelief_entry, hli_entry, 
                   mediClaim_entry, childException_entry, advanceTax_entry):
@@ -13,7 +13,7 @@ def calculate_tax(standardDeduction_entry, totalIncome_entry, hra_entry, coOpera
     standardDeduction = float(standardDeduction_entry.get())
     totalIncome = float(totalIncome_entry.get())
     hra = float(hra_entry.get())
-    coOperation = int(coOperation_entry.get())
+    cooperation = int(cooperation_entry.get())
     gpf = float(gpf_entry.get())
     childTution = float(childTution_entry.get())
     lic  = float(lic_entry.get())
@@ -51,10 +51,10 @@ def add_widgets():
     hra_entry.grid(row=3, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the Co-Operation label and entry box
-    coOperation_label = ttk.Label(frame, text="Co-Operation Amount :", font = ("Calibri", 13, "normal"))
-    coOperation_label.grid(row=4, column=2, padx=10, pady=10, sticky = "w")
-    coOperation_entry = ttk.Entry(frame,  font = ("Calibri", 12, "normal"), width=18, justify="left")
-    coOperation_entry.grid(row=4, column=6, padx=10, pady=10, columnspan=3)
+    cooperation_label = ttk.Label(frame, text="Co-Operation Amount :", font = ("Calibri", 13, "normal"))
+    cooperation_label.grid(row=4, column=2, padx=10, pady=10, sticky = "w")
+    cooperation_entry = ttk.Entry(frame,  font = ("Calibri", 12, "normal"), width=18, justify="left")
+    cooperation_entry.grid(row=4, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the GPF label and entry box
     gpf_label = ttk.Label(frame, text="GPF Amount:", font = ("Calibri", 13, "normal"))
@@ -142,8 +142,10 @@ def add_widgets():
     calculate_button = tk.Button(frame, text="Calculate", width=12, height=1, background="#6900EE", foreground="white", font = ("Calibri", 15, "bold"), bd=1)
     calculate_button.grid(row=17, column=3, columnspan=2, padx=10, pady=10)
 
+# Create the root window
 root = ctk.CTk()
 
+# Set the root window attributes
 root.wm_title("Tax Calculator")
 root.wm_geometry("800x750")
 root.wm_resizable(False, False)
@@ -155,6 +157,7 @@ root.grid_columnconfigure(0, weight=1)
 canvas = tk.Canvas(root)
 canvas.grid(row=0, column=0, sticky="nsew")
 
+# Create the scrollbar
 scrollbar = CTkScrollbar(root, command=canvas.yview)
 scrollbar.grid(row=0, column=1, sticky="ns")
 
