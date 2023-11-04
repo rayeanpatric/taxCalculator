@@ -113,7 +113,7 @@ def add_widgets():
 root = tk.Tk()
 root.wm_title("Tax Calculator")
 root.wm_geometry("600x500")
-root.resizable(False, False)
+root.wm_resizable(False, False)
 
 root.grid_rowconfigure(0, weight=1)
 root.grid_columnconfigure(0, weight=1)
