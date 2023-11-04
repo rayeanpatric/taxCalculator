@@ -1,9 +1,10 @@
 import tkinter as tk
 from tkinter import ttk
+import customtkinter as ctk
 
 def add_widgets():
     
-    standardDeduction_label = tk.Label(frame, text="Tax Calculator\n", font = ("Times New Roman", 16, "bold"), foreground="#6900EE")
+    standardDeduction_label = tk.Label(frame, text="Tax Calculator\n", font = ("Times New Roman", 18, "bold"), foreground="#6900EE")
     standardDeduction_label.grid(row=0, column=3, padx=10, pady=10, sticky = "n")
 
     # Create the Standard Deduction label and entry box
@@ -97,29 +98,32 @@ def add_widgets():
     childException_entry.grid(row=15, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the Advance Tax label and entry box
-    advanceTax_label = tk.Label(frame, text="Advance Tax Paid:\n\n", font = ("Calibri", 13, "normal"))
-    advanceTax_label.grid(row=16, column=2, padx=10, pady=10, sticky = "w", )
-    advanceTax_entry = tk.Entry(frame, border=1, font = ("Calibri", 12, "normal"), width=15, justify="left")
+    advanceTax_label = tk.Label(frame, text="Advance Tax Paid:\n\n")
+    advanceTax_label.grid(row=16, column=2, padx=10, pady=10, sticky = "w")
+    advanceTax_entry = tk.Entry(frame)
     advanceTax_entry.grid(row=16, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the tax label
     tax_label = tk.Label(frame, text="")
     tax_label.grid(row=5, column=0, columnspan=2, padx=10, pady=10)
+    
+    tax_label = tk.Label(frame, text="")
+    tax_label.grid(row=0, column=0, columnspan=3, padx=10, pady=10) 
 
     # Create the calculate button
-    calculate_button = tk.Button(frame, text="Calculate")
+    calculate_button = tk.Button(frame, text="Calculate", width=15, height=2)
     calculate_button.grid(row=17, column=3, columnspan=2, padx=10, pady=10)
 
-root = tk.Tk()
+root = ctk.CTk()
 
 root.wm_title("Tax Calculator")
-root.wm_geometry("600x500")
-root.wm_resizable(False, False)
+root.wm_geometry("600x600")
+#root.wm_resizable(False, False)
 
 root.grid_rowconfigure(0, weight=1)
 root.grid_columnconfigure(0, weight=1)
 
-canvas = tk.Canvas(root)
+canvas = ctk.CTkCanvas(root)
 canvas.grid(row=0, column=0, sticky="nsew")
 
 scrollbar = tk.Scrollbar(root, orient=tk.VERTICAL, command=canvas.yview)
