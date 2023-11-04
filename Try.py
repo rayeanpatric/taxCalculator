@@ -1,4 +1,6 @@
 import tkinter as tk
+from tkinter import ttk
+
 def add_widgets():
     
     standardDeduction_label = tk.Label(frame, text="Tax Calculator", font = ("Times New Roman", 16, "bold"), foreground="#060c1f")
@@ -107,9 +109,14 @@ def add_widgets():
     # Create the calculate button
     calculate_button = tk.Button(frame, text="Calculate")
     calculate_button.grid(row=17, column=0, columnspan=2, padx=10, pady=10)
+
 root = tk.Tk()
+root.wm_title("Tax Calculator")
+root.geometry("700x500")
+
 root.grid_rowconfigure(0, weight=1)
 root.grid_columnconfigure(0, weight=1)
+
 canvas = tk.Canvas(root)
 canvas.grid(row=0, column=0, sticky="nsew")
 
