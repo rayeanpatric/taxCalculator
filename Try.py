@@ -6,7 +6,7 @@ from customtkinter import CTkScrollbar
 def add_widgets():
     
     standardDeduction_label = tk.Label(frame, text="Tax Calculator\n", font = ("Times New Roman", 18, "bold"), foreground="#6900EE")
-    standardDeduction_label.grid(row=0, column=3, padx=10, pady=10, sticky = "n")
+    standardDeduction_label.grid(row=0, column=3, padx=10, pady=10, sticky = "")
 
     # Create the Standard Deduction label and entry box
     standardDeduction_label = tk.Label(frame, text="Standard Deduction: ", font = ("Calibri", 13, "normal"))
