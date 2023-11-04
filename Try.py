@@ -105,20 +105,20 @@ def add_widgets():
     advanceTax_entry.grid(row=16, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the tax label
-    tax_label = tk.Label(frame, text="")
+    tax_label = tk.Label(frame, text="\t")
     tax_label.grid(row=5, column=0, columnspan=2, padx=10, pady=10)
     
     tax_label = tk.Label(frame, text="")
     tax_label.grid(row=0, column=0, columnspan=3, padx=10, pady=10) 
 
     # Create the calculate button
-    calculate_button = tk.Button(frame, text="Calculate", width=15, height=2)
+    calculate_button = tk.Button(frame, text="Calculate", width=12, height=1, background="#6900EE", foreground="white", font = ("Calibri", 15, "bold"), bd=1)
     calculate_button.grid(row=17, column=3, columnspan=2, padx=10, pady=10)
 
 root = ctk.CTk()
 
 root.wm_title("Tax Calculator")
-root.wm_geometry("600x600")
+root.wm_geometry("800x750")
 #root.wm_resizable(False, False)
 
 root.grid_rowconfigure(0, weight=1)
