@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 import customtkinter as ctk
+from customtkinter import CTkScrollbar
 
 def add_widgets():
     
@@ -126,7 +127,7 @@ root.grid_columnconfigure(0, weight=1)
 canvas = ctk.CTkCanvas(root)
 canvas.grid(row=0, column=0, sticky="nsew")
 
-scrollbar = tk.Scrollbar(root, orient=tk.VERTICAL, command=canvas.yview)
+scrollbar = CTkScrollbar(root, orient=tk.VERTICAL, command=canvas.yview)
 scrollbar.grid(row=0, column=1, sticky="ns")
 
 canvas.configure(yscrollcommand=scrollbar.set)
