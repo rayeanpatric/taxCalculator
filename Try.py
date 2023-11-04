@@ -109,10 +109,10 @@ def add_widgets():
     calculate_button.grid(row=17, column=0, columnspan=2, padx=10, pady=10)
 root = tk.Tk()
 canvas = tk.Canvas(root)
-canvas.grid(row=0, column=0, padx=500, pady=100)
+canvas.grid(row=0, column=0, sticky="nsew")
 
-scrollbar = tk.Scrollbar(root, command=canvas.yview)
-scrollbar.grid(row=18, column=0, padx=10, pady=10)
+scrollbar = tk.Scrollbar(root, orient=tk.VERTICAL, command=canvas.yview)
+scrollbar.grid(row=0, column=1, sticky="ns")
 
 canvas.configure(yscrollcommand=scrollbar.set)
 
