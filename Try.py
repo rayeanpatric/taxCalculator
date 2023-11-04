@@ -7,7 +7,7 @@ def add_widgets():
     standardDeduction_label.grid(row=0, column=3, padx=10, pady=10, sticky = "n")
 
     # Create the Standard Deduction label and entry box
-    standardDeduction_label = tk.Label(frame, text="Standard Deduction: ")
+    standardDeduction_label = tk.Label(frame, text="Standard Deduction: ", font = ("Calibri", 13, "normal"))
     standardDeduction_label.grid(row=1, column=2, padx=10, pady=10, sticky = "w")
     standardDeduction_entry = tk.Entry(frame)
     standardDeduction_entry.grid(row=1, column=6, padx=10, pady=10, columnspan=3)
@@ -43,7 +43,7 @@ def add_widgets():
     childTution_entry.grid(row=6, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the lic label and entry box
-    lic_label = tk.Label(frame, text="lic Amount:")
+    lic_label = tk.Label(frame, text="LIC Amount:")
     lic_label.grid(row=7, column=2, padx=10, pady=10, sticky = "w")
     lic_entry = tk.Entry(frame)
     lic_entry.grid(row=7, column=6, padx=10, pady=10, columnspan=3)
@@ -111,6 +111,7 @@ def add_widgets():
     calculate_button.grid(row=17, column=3, columnspan=2, padx=10, pady=10)
 
 root = tk.Tk()
+
 root.wm_title("Tax Calculator")
 root.wm_geometry("600x500")
 root.wm_resizable(False, False)
