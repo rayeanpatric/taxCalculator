@@ -108,6 +108,8 @@ def add_widgets():
     calculate_button = tk.Button(frame, text="Calculate")
     calculate_button.grid(row=17, column=0, columnspan=2, padx=10, pady=10)
 root = tk.Tk()
+root.grid_rowconfigure(0, weight=1)
+root.grid_columnconfigure(0, weight=1)
 canvas = tk.Canvas(root)
 canvas.grid(row=0, column=0, sticky="nsew")
 
