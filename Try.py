@@ -3,7 +3,7 @@ from tkinter import ttk
 
 def add_widgets():
     
-    standardDeduction_label = tk.Label(frame, text="Tax Calculator\n", font = ("Times New Roman", 16, "bold"), foreground="#060c1f")
+    standardDeduction_label = tk.Label(frame, text="Tax Calculator\n", font = ("Times New Roman", 16, "bold"), foreground="#00CAEE")
     standardDeduction_label.grid(row=0, column=3, padx=10, pady=10, sticky = "n")
 
     # Create the Standard Deduction label and entry box
