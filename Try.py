@@ -9,97 +9,97 @@ def add_widgets():
     # Create the Standard Deduction label and entry box
     standardDeduction_label = tk.Label(frame, text="Standard Deduction: ", font = ("Calibri", 13, "normal"))
     standardDeduction_label.grid(row=1, column=2, padx=10, pady=10, sticky = "w")
-    standardDeduction_entry = tk.Entry(frame)
+    standardDeduction_entry = tk.Entry(frame, border=1, font = ("Calibri", 12, "normal"), width=15, justify="left")
     standardDeduction_entry.grid(row=1, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the Total Income label and entry box
-    totalIncome_label = tk.Label(frame, text="Total Income: ")
+    totalIncome_label = tk.Label(frame, text="Total Income: ", font = ("Calibri", 13, "normal"))
     totalIncome_label.grid(row=2, column=2, padx=10, pady=10, sticky = "w")
-    totalIncome_entry = tk.Entry(frame)
+    totalIncome_entry = tk.Entry(frame, border=1, font = ("Calibri", 12, "normal"), width=15, justify="left")
     totalIncome_entry.grid(row=2, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the Housing Rent Allowance label and entry box
-    hra_label = tk.Label(frame, text="Housing rent Allowance:")
+    hra_label = tk.Label(frame, text="Housing rent Allowance:", font = ("Calibri", 13, "normal"))
     hra_label.grid(row=3, column=2, padx=10, pady=10, sticky = "w")
-    hra_entry = tk.Entry(frame)
+    hra_entry = tk.Entry(frame, border=1, font = ("Calibri", 12, "normal"), width=15, justify="left")
     hra_entry.grid(row=3, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the Co-Operation label and entry box
-    coOperation_label = tk.Label(frame, text="Co-Operation Amount :")
+    coOperation_label = tk.Label(frame, text="Co-Operation Amount :", font = ("Calibri", 13, "normal"))
     coOperation_label.grid(row=4, column=2, padx=10, pady=10, sticky = "w")
-    coOperation_entry = tk.Entry(frame)
+    coOperation_entry = tk.Entry(frame, border=1, font = ("Calibri", 12, "normal"), width=15, justify="left")
     coOperation_entry.grid(row=4, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the GPF label and entry box
-    gpf_label = tk.Label(frame, text="GPF Amount:")
+    gpf_label = tk.Label(frame, text="GPF Amount:", font = ("Calibri", 13, "normal"))
     gpf_label.grid(row=5, column=2, padx=10, pady=10, sticky = "w")
-    gpf_entry = tk.Entry(frame)
+    gpf_entry = tk.Entry(frame, border=1, font = ("Calibri", 12, "normal"), width=15, justify="left")
     gpf_entry.grid(row=5, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the Child Tution label and entry box
-    childTution_label = tk.Label(frame, text="Child Tution Amount:")
+    childTution_label = tk.Label(frame, text="Child Tution Amount:", font = ("Calibri", 13, "normal"))
     childTution_label.grid(row=6, column=2, padx=10, pady=10, sticky = "w")
-    childTution_entry = tk.Entry(frame)
+    childTution_entry = tk.Entry(frame, border=1, font = ("Calibri", 12, "normal"), width=15, justify="left")
     childTution_entry.grid(row=6, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the lic label and entry box
-    lic_label = tk.Label(frame, text="LIC Amount:")
+    lic_label = tk.Label(frame, text="LIC Amount:", font = ("Calibri", 13, "normal"))
     lic_label.grid(row=7, column=2, padx=10, pady=10, sticky = "w")
-    lic_entry = tk.Entry(frame)
+    lic_entry = tk.Entry(frame, border=1, font = ("Calibri", 12, "normal"), width=15, justify="left")
     lic_entry.grid(row=7, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the Housing Loan Principle label and entry box
-    hlp_label = tk.Label(frame, text="Housing Loan Principle Amount:")
+    hlp_label = tk.Label(frame, text="Housing Loan Principle Amount:", font = ("Calibri", 13, "normal"))
     hlp_label.grid(row=8, column=2, padx=10, pady=10, sticky = "w")
-    hlp_entry = tk.Entry(frame)
+    hlp_entry = tk.Entry(frame, border=1, font = ("Calibri", 12, "normal"), width=15, justify="left")
     hlp_entry.grid(row=8, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the Section 80CCC label and entry box
-    section80CCC_label = tk.Label(frame, text="Section 80CCC Amount:")
+    section80CCC_label = tk.Label(frame, text="Section 80CCC Amount:", font = ("Calibri", 13, "normal"))
     section80CCC_label.grid(row=9, column=2, padx=10, pady=10, sticky = "w")
-    section80CCC_entry = tk.Entry(frame)
+    section80CCC_entry = tk.Entry(frame, border=1, font = ("Calibri", 12, "normal"), width=15, justify="left")
     section80CCC_entry.grid(row=9, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the Section 80CCD label and entry box
-    section80CCD_label = tk.Label(frame, text="Section 80CCD Amount:")
+    section80CCD_label = tk.Label(frame, text="Section 80CCD Amount:", font = ("Calibri", 13, "normal"))
     section80CCD_label.grid(row=10, column=2, padx=10, pady=10, sticky = "w")
-    section80CCD_entry = tk.Entry(frame)
+    section80CCD_entry = tk.Entry(frame, border=1, font = ("Calibri", 12, "normal"), width=15, justify="left")
     section80CCD_entry.grid(row=10, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the PM Relief label and entry box
-    pmRelief_label = tk.Label(frame, text="PM Relief Amount:")
+    pmRelief_label = tk.Label(frame, text="PM Relief Amount:", font = ("Calibri", 13, "normal"))
     pmRelief_label.grid(row=11, column=2, padx=10, pady=10, sticky = "w")
-    pmRelief_entry = tk.Entry(frame)
+    pmRelief_entry = tk.Entry(frame, border=1, font = ("Calibri", 12, "normal"), width=15, justify="left")
     pmRelief_entry.grid(row=11, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the CM Relief label and entry box
-    cmRelief_label = tk.Label(frame, text="CM Relief Amount:")
+    cmRelief_label = tk.Label(frame, text="CM Relief Amount:", font = ("Calibri", 13, "normal"))
     cmRelief_label.grid(row=12, column=2, padx=10, pady=10, sticky = "w")
-    cmRelief_entry = tk.Entry(frame)
+    cmRelief_entry = tk.Entry(frame, border=1, font = ("Calibri", 12, "normal"), width=15, justify="left")
     cmRelief_entry.grid(row=12, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the hli label and entry box
-    hli_label = tk.Label(frame, text="Housing Loan Interest Amount:")
-    hli_label.grid(row=13, column=2, padx=10, pady=10, sticky = "w")
-    hli_entry = tk.Entry(frame)
+    hli_label = tk.Label(frame, text="Housing Loan Interest Amount:", font = ("Calibri", 13, "normal" ))
+    hli_label.grid(row=13, column=2, padx=10, pady=10, sticky = "w",)
+    hli_entry = tk.Entry(frame, border=1, font = ("Calibri", 12, "normal"), width=15, justify="left")
     hli_entry.grid(row=13, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the Medical Claim label and entry box
-    mediClaim_label = tk.Label(frame, text="Medical Claim:")
+    mediClaim_label = tk.Label(frame, text="Medical Claim:", font = ("Calibri", 13, "normal"))
     mediClaim_label.grid(row=14, column=2, padx=10, pady=10, sticky = "w")
-    mediClaim_entry = tk.Entry(frame)
+    mediClaim_entry = tk.Entry(frame, border=1, font = ("Calibri", 12, "normal"), width=15, justify="left")
     mediClaim_entry.grid(row=14, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the Child Exception label and entry box
-    childException_label = tk.Label(frame, text="Child Exception Amount:")
+    childException_label = tk.Label(frame, text="Child Exception Amount:", font = ("Calibri", 13, "normal"))
     childException_label.grid(row=15, column=2, padx=10, pady=10, sticky = "w")
-    childException_entry = tk.Entry(frame)
+    childException_entry = tk.Entry(frame, border=1, font = ("Calibri", 12, "normal"), width=15, justify="left")
     childException_entry.grid(row=15, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the Advance Tax label and entry box
-    advanceTax_label = tk.Label(frame, text="Advance Tax Paid:\n\n")
-    advanceTax_label.grid(row=16, column=2, padx=10, pady=10, sticky = "w")
-    advanceTax_entry = tk.Entry(frame)
+    advanceTax_label = tk.Label(frame, text="Advance Tax Paid:\n\n", font = ("Calibri", 13, "normal"))
+    advanceTax_label.grid(row=16, column=2, padx=10, pady=10, sticky = "w", )
+    advanceTax_entry = tk.Entry(frame, border=1, font = ("Calibri", 12, "normal"), width=15, justify="left")
     advanceTax_entry.grid(row=16, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the tax label
