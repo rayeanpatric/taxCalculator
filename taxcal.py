@@ -21,13 +21,13 @@ def calculate_tax():
     advanceTax = float(advanceTax_entry.get())
 
     # Calculate the taxable income
-    taxable_income = income - expenses - deductions - (dependents * 2000)
+    # taxable_income = income - expenses - deductions - (dependents * 2000)
 
     # Calculate the tax
-    tax = taxable_income * (tax_rate / 100)
+    # tax = taxable_income * (tax_rate / 100)
 
     # Update the tax label
-    tax_label.config(text=f"${tax:.2f}")
+    # tax_label.config(text=f"${tax:.2f}")
 
 # Create the main window
 root = tk.Tk()
