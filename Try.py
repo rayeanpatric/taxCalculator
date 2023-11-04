@@ -99,9 +99,9 @@ def add_widgets():
     childException_entry.grid(row=15, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the Advance Tax label and entry box
-    advanceTax_label = tk.Label(frame, text="Advance Tax Paid:\n\n")
+    advanceTax_label = tk.Label(frame, text="Advance Tax Paid:\n\n", font = ("Calibri", 13, "normal"))
     advanceTax_label.grid(row=16, column=2, padx=10, pady=10, sticky = "w")
-    advanceTax_entry = tk.Entry(frame)
+    advanceTax_entry = tk.Entry(frame, font = ("Calibri", 12, "normal"), width=15, justify="left")
     advanceTax_entry.grid(row=16, column=6, padx=10, pady=10, columnspan=3)
 
     # Create the tax label
