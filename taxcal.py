@@ -1,14 +1,10 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import BOTH, ttk
 import customtkinter as ctk
 from customtkinter import CTkScrollbar
 
 # Create a function to calculate tax
-def calculate_tax(standardDeduction_entry, totalIncome_entry, hra_entry, cooperation_entry, 
-                  gpf_entry, childTution_entry, lic_entry, hlp_entry, section80CCC_entry, 
-                  section80CCD_entry, pmRelief_entry, cmRelief_entry, hli_entry, 
-                  mediClaim_entry, childException_entry, advanceTax_entry):
-    
+def calculateTax():
     # Get the values from the entry boxes
     standardDeduction = float(standardDeduction_entry.get())
     totalIncome = float(totalIncome_entry.get())
@@ -27,8 +23,95 @@ def calculate_tax(standardDeduction_entry, totalIncome_entry, hra_entry, coopera
     childException = float(childException_entry.get())
     advanceTax = float(advanceTax_entry.get())
 
+    Section80C = gpf + childTution + lic + hlp
+    StandardException = Section80C + section80CCC + section80CCD
+
+    if StandardException >= 150000:
+        StandardException = 150000
+
+    if hli >= 200000:
+        hli = 200000
+
+    if mediClaim >= 25000:
+        mediClaim = 25000
+
+    if childException >= 75000:
+        childException = 75000
+
+    DeductedIncome = totalIncome - (standardDeduction + hra + cooperation + pmRelief + cmRelief + StandardException + hli + mediClaim + childException)
+    print(DeductedIncome)
+    global final_tax
+
+    root = ctk.CTk()
+    
+    root.wm_geometry(f"400x270")
+    root.wm_iconbitmap("icon.ico")
+    root.wm_title("Final Tax")
+    root.wm_resizable(False, False)
+
+    canvas = tk.Canvas(root)
+    canvas.pack(fill=BOTH)
+
+    frame = tk.Frame(canvas)
+    canvas.create_window((0, 0), window=frame, anchor='nw')
+    ttk.Label(frame, text="\n\tFinal Amount", font=("san serif", 12, "bold"), foreground="purple", anchor='center').pack()
+
+    if DeductedIncome <= 250000:
+            final_tax = 0
+            ttk.Label(frame, text=f"\n\tYour taxable amt.: Rs. {final_tax}\n", font=("san serif", 12, "normal"), anchor='center').pack()
+
+    elif 250000 < DeductedIncome < 500001:
+        ti7 = DeductedIncome - 250000
+        ti8 = 0.05 * ti7
+        final_tax = (ti8) + ((ti8) * 0.04)
+        ttk.Label(frame, text=f"\n\tYour taxable amt.: Rs. {int(round(final_tax, 1))}\n", font=("san serif", 12, "normal"), anchor='center').pack()
+
+    elif DeductedIncome <= 750000: 
+        final_tax = (((DeductedIncome - 500000 * 10) / 100)+ 12500 + ((((DeductedIncome - 500000 * 10) / 100)+ 12500) * 0.04))
+        ttk.Label(frame, text=f"\nYour taxable amt.: Rs. {int(round(final_tax, 1))}", font=("san serif", 12, "normal"), anchor='center').pack()
+                      
+    elif DeductedIncome <= 1000000: 
+        final_tax = (((DeductedIncome - 750000 * 15) / 100)+ 37500 + ((((DeductedIncome - 750000 * 15) / 100)+ 37500) * 0.04))
+        ttk.Label(frame, text=f"\nYour taxable amt.: Rs. {int(round(final_tax, 1))}", font=("san serif", 12, "normal"), anchor='center').pack()
+
+    else:
+        ti7 = DeductedIncome - 1000000
+        ti8 = (ti7 * 0.3)
+        ti9 = (ti8 + 112500) * 0.04
+        final_tax = (ti8 + ti9 + 112500)
+        ttk.Label(frame, text=f"\n\tYour taxable amt.: Rs. {int(round(final_tax, 1))}\n", font=("san serif", 12, "normal"), anchor='center').pack()
+        
+    ft = final_tax - float(advanceTax)
+    Positive_ft = -1 * ft
+
+    if ft < 0:
+        ttk.Label(frame, text=f"\n\tThe amt. to be returned to you: Rs.{int(round(Positive_ft, 1))}", font=("san serif", 12, "normal"), anchor='center').pack()
+    elif ft == 0:
+        ttk.Label(frame, text="\n\tThe amt. to be paid by you: Rs. 0", font=("san serif", 12, "normal"), anchor='center').pack()
+    else:
+        ttk.Label(frame, text=f"\n\tThe amt to be paid by you: Rs. {int(round(ft, 1))}", font=("san serif", 12, "normal"), anchor='center').pack()
+        
+    root.mainloop()
+
 def add_widgets():
     
+    global standardDeduction_entry
+    global totalIncome_entry
+    global hra_entry
+    global cooperation_entry 
+    global gpf_entry
+    global childTution_entry
+    global lic_entry
+    global hlp_entry
+    global section80CCC_entry
+    global section80CCD_entry
+    global pmRelief_entry
+    global cmRelief_entry
+    global hli_entry
+    global mediClaim_entry
+    global childException_entry
+    global advanceTax_entry
+
     standardDeduction_label = ttk.Label(frame, text="Tax Calculator\n", font = ("Times New Roman", 18, "bold"), foreground="#6900EE")
     standardDeduction_label.grid(row=0, column=3, padx=10, pady=10, sticky = "")
 
@@ -139,7 +222,7 @@ def add_widgets():
     space.grid(row=17, column=0, columnspan=8, padx=10, pady=10)
 
     # Create the calculate button
-    calculate_button = tk.Button(frame, text="Calculate", width=12, height=1, background="#6900EE", foreground="white", font = ("Calibri", 15, "bold"), bd=1)
+    calculate_button = tk.Button(frame, text="Calculate", width=12, height=1, background="#6900EE", foreground="white", font = ("Calibri", 15, "bold"), bd=1, command=calculateTax)
     calculate_button.grid(row=17, column=3, columnspan=2, padx=10, pady=10)
 
 # Create the root window
@@ -147,7 +230,15 @@ root = ctk.CTk()
 
 # Set the root window attributes
 root.wm_title("Tax Calculator")
-root.wm_geometry("800x750")
+
+width = root.winfo_screenwidth()
+height = root.winfo_screenheight()
+
+# Calculate the center of the screen
+x = int(width / 2)
+y = int(height / 2)
+
+root.wm_geometry(f"800x750")
 root.wm_resizable(False, False)
 root.iconbitmap("icon.ico")
 
